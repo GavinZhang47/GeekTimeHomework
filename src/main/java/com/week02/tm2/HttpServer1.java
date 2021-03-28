@@ -9,9 +9,9 @@ import java.net.Socket;
 
 public class HttpServer1 {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         ServerSocket serverSocket = new ServerSocket(8801);
-        while (true){
+        while (true) {
             Socket socket = serverSocket.accept();
             service(socket);
         }
@@ -22,8 +22,8 @@ public class HttpServer1 {
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
             printWriter.println("HTTP/1.1 200 OK");
             printWriter.println("Content-Type:text/html;charset=utf-8");
-            String body="hello,nio1";
-            printWriter.println("Content-Length:"+body.getBytes().length);
+            String body = "hello,nio1";
+            printWriter.println("Content-Length:" + body.getBytes().length);
             printWriter.println();
             printWriter.write(body);
             printWriter.close();

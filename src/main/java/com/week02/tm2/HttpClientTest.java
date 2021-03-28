@@ -11,9 +11,9 @@ import sun.net.www.http.HttpClient;
 /**
  * @author Gavin
  */
-public class HttpClientTest extends HttpClient{
+public class HttpClientTest extends HttpClient {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         HttpGet httpGet = new HttpGet("http://localhost:8801/");
         CloseableHttpResponse response = httpClient.execute(httpGet);
@@ -23,8 +23,5 @@ public class HttpClientTest extends HttpClient{
             System.out.println("响应内容长度为:" + responseEntity.getContentLength());
             System.out.println("响应内容为:" + EntityUtils.toString(responseEntity));
         }
-
-
     }
-
 }
